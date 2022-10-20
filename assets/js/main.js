@@ -51,7 +51,7 @@ const containerEl = document.querySelector('.container');
 
 printTeam(team, containerEl)
 
-function printTeam(array, wrapperEl) {
+function printTeam(array) {
     //ciclo all'interno dell'array
     for (let i = 0; i < array.length; i++) {
         const element = array[i];
@@ -64,8 +64,7 @@ function printTeam(array, wrapperEl) {
             let elementProfile = document.createElement('div')
             elementProfile.append(profile)
             profileEL.append(elementProfile)
-            wrapperEl.append(profileEL)
-
         }
+        containerEl.append(profileEL)
     }
 }
