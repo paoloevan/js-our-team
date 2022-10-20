@@ -49,7 +49,7 @@ console.log(team);
 //seleziono elemento dom
 const containerEl = document.querySelector('.container');
 
-printTeam(team, containerEl)
+printTeam(team, containerEl);
 
 function printTeam(array, wrapperEl) {
     //ciclo all'interno dell'array
@@ -57,7 +57,7 @@ function printTeam(array, wrapperEl) {
         const element = array[i];
         //creo elemento dom del singolo profilo
         let profileEL = document.createElement('div');
-        profileEL.classList.add('row')
+        profileEL.classList.add('row');
         //ciclo all'interno del singolo oggetto
         for (let key in element) {
             let profile = element[key];
@@ -65,16 +65,16 @@ function printTeam(array, wrapperEl) {
             if (key === 'foto') {
                 profileEL.insertAdjacentHTML('afterbegin', `<img src="./assets/img/${profile}" alt="">`)
             } else if (key === 'ruolo') {
-                elementProfile.append(profile)
-                elementProfile.style.fontStyle = 'italic'
-                profileEL.append(elementProfile)
+                elementProfile.append(profile);
+                elementProfile.style.fontStyle = 'italic';
+                profileEL.append(elementProfile);
             } else {
-                elementProfile.append(profile)
-                elementProfile.style.marginBottom = '0.5rem'
-                profileEL.append(elementProfile)
+                elementProfile.append(profile);
+                elementProfile.style.marginBottom = '0.5rem';
+                profileEL.append(elementProfile);
             }
 
         }
-        wrapperEl.append(profileEL)
+        wrapperEl.append(profileEL);
     }
 }
