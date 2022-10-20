@@ -18,12 +18,12 @@ const team = [
     {
         nome: 'Angela',
         ruolo: 'Chief Editor',
-        foto: 'angela-carro-chief-editor.jpg'
+        foto: 'angela-caroll-chief-editor.jpg'
     },
     {
         nome: 'Waleter gordon',
         ruolo: 'Chief Editor',
-        foto: 'waleter-gordon-office-manager.jpg'
+        foto: 'walter-gordon-office-manager.jpg'
     },
     {
         nome: 'Wayne Barnett',
@@ -31,14 +31,14 @@ const team = [
         foto: 'angela-lopez-social-media-manager.jpg'
     },
     {
-        nome: 'Scotto Estrada',
+        nome: 'Scott Estrada',
         ruolo: 'Developer',
-        foto: 'scotto-estrada-developer.jpg'
+        foto: 'scott-estrada-developer.jpg'
     },
     {
         nome: 'Barbara Ramos',
         ruolo: 'Graphic Designer',
-        foto: 'barbara-ramos-graphiv-designer.jpg'
+        foto: 'barbara-ramos-graphic-designer.jpg'
     }
 ];
 
@@ -62,8 +62,13 @@ function printTeam(array, wrapperEl) {
         for (let key in element) {
             let profile = element[key];
             let elementProfile = document.createElement('div')
-            elementProfile.append(profile)
+            if (key === 'foto') {
+                elementProfile.insertAdjacentHTML('afterbegin', `<img src="./assets/img/${profile}" alt="">`)
+            } else  {
+                elementProfile.append(profile)
+            }
             profileEL.append(elementProfile)
+
         }
         wrapperEl.append(profileEL)
     }
