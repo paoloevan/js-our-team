@@ -63,11 +63,16 @@ function printTeam(array, wrapperEl) {
             let profile = element[key];
             let elementProfile = document.createElement('div')
             if (key === 'foto') {
-                elementProfile.insertAdjacentHTML('afterbegin', `<img src="./assets/img/${profile}" alt="">`)
-            } else  {
+                profileEL.insertAdjacentHTML('afterbegin', `<img src="./assets/img/${profile}" alt="">`)
+            } else if (key === 'ruolo') {
                 elementProfile.append(profile)
+                elementProfile.style.fontStyle = 'italic'
+                profileEL.append(elementProfile)
+            } else {
+                elementProfile.append(profile)
+                elementProfile.style.marginBottom = '0.5rem'
+                profileEL.append(elementProfile)
             }
-            profileEL.append(elementProfile)
 
         }
         wrapperEl.append(profileEL)
