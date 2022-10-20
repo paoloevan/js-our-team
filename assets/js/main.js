@@ -48,19 +48,24 @@ console.log(team);
 // MILESTONE 2: Stampare le stesse informazioni su DOM sottoforma di stringhe
 //seleziono elemento dom
 const containerEl = document.querySelector('.container');
-//ciclo all'interno dell'array
-for (let i = 0; i < team.length; i++) {
-    const element = team[i];
-    //creo elemento dom del singolo profilo
-    let profileEL = document.createElement('div');
-    profileEL.classList.add('row')
-    //ciclo all'interno del singolo oggetto
-    for (let key in element) {
-        let profile = element[key];
-        let elementProfile = document.createElement('div')
-        elementProfile.append(profile)
-        profileEL.append(elementProfile)
-        containerEl.append(profileEL)
 
+printTeam(team, containerEl)
+
+function printTeam(array, wrapperEl) {
+    //ciclo all'interno dell'array
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        //creo elemento dom del singolo profilo
+        let profileEL = document.createElement('div');
+        profileEL.classList.add('row')
+        //ciclo all'interno del singolo oggetto
+        for (let key in element) {
+            let profile = element[key];
+            let elementProfile = document.createElement('div')
+            elementProfile.append(profile)
+            profileEL.append(elementProfile)
+            wrapperEl.append(profileEL)
+
+        }
     }
 }
